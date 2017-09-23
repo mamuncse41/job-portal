@@ -32,7 +32,7 @@ array_pop($data_at);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Code Breakers Search</title>
+    <title>Cvbank:-Homepage</title>
 
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
@@ -51,6 +51,7 @@ array_pop($data_at);
     <!-- /core JS files -->
     <script href="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">        </script>
     <script type="text/javascript" src="assets/js/core/app.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/apple-icon-180x180.png">
 </head>
 
 <body>
@@ -63,14 +64,26 @@ array_pop($data_at);
         <div class="content-wrapper">
             <!-- Content area -->
             <div class="content">
-                <!-- Search field -->
+                <div class="top-menu">
+
+                    <ul >
+
+                        
+                        <li class="upper-links"><a class="links" href="http://localhost/cvbank/views/Provider/Users/login.php">Job Provider</a></li>
+                        <li class="upper-links"><a class="links" href="http://localhost/cvbank/views/finalproject/project/login.php">Job Seeker</a></li>
+                        <li class="upper-links"><a class="links" href="http://localhost/cvbank/views/finalproject/project/about_us.php">About Us</a></li>
+                        <li class="upper-links"><a class="links" href="http://localhost/cvbank/views/finalproject/project/contact.php">Contact</a></li>
+                        <li class="upper-links"><a class="links" href="http://localhost/cvbank/views/finalproject/project/help.php">Help</a></li>
+
+                    </ul>
+                </div>
                 <div class="panel panel-flat">
                     <div class="panel-heading">
                         <h3 class="panel-title">Profile Search.... </h3>
                         <div class="heading-elements">
                             <ul class="icons-list">
                                 <li><a data-action="collapse"></a></li>
-                                <!--			                		<li><a data-action="close"></a></li>-->
+
                             </ul>
                         </div>
                     </div>

@@ -27,7 +27,7 @@ $portfolios=$details_obj->portfolios();
 <html lang="en">
 
 <head>
-    <title>Code | Breakers</title>
+    <title>Cvbank:profile-page</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="">
@@ -73,7 +73,7 @@ $portfolios=$details_obj->portfolios();
         <div class="aside1">
             <a class="contact-button"><i class="fa fa-paper-plane"></i></a>
             <a class="download-button"><i class="fa fa-cloud-download"></i></a>
-            <div class="aside-content"><span class="part1">Code</span><span class="part2">Breakers</span>
+            <div class="aside-content"><span class="part1">Cvbank</span><span class="part2">Profile</span>
             </div>
         </div>
         <aside class="hs-menu" id="hs-menu">
@@ -129,7 +129,7 @@ $portfolios=$details_obj->portfolios();
             <!-- Header -->
             <div id="header_container">
                 <div id="header">
-                    <div><a class="home"><i class="fa fa-home"></i></a>
+                    <div><a href="../index.php" class="home"><i class="fa fa-home"></i></a>
                     </div>
                     <div><a href="" class="previous-page arrow"><i class="fa fa-angle-left"></i></a>
                     </div>

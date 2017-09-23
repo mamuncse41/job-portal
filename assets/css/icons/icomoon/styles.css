@@ -1,3 +1,4 @@
+
 @font-face {
 	font-family: 'icomoon';
 	src:url('fonts/icomoon.eot?3p0rtw');
@@ -1188,3 +1189,18 @@
 .icon-unfold:before{content:"\e9fe";}
 .icon-versions:before{content:"\e9ff";}
 .icon-x:before{content:"\ea00";}
+.top-menu{
+
+	width: 100%;
+	background: gray;
+	padding-bottom:30px;
+	padding-left: 60%;
+	font-size: 15px;
+	padding-top: 30px;
+	text-decoration: none;
+}
+.top-menu li{ display:block;                              /*--for removing bullets--*/
+	float:left;                                       /*--for horizontal line--*/
+	width:100px;                                /*--for menu width--*/
+	background-color:gray;
+	}

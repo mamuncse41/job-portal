@@ -22,7 +22,7 @@ class user_log
           $this->username=$data['username'];
       }
       if(array_key_exists('password',$data)){
-          $this->password=$data['password'];
+          $this->password=md5($data['password']);
       }
       if(array_key_exists('email',$data)){
           $this->email=$data['email'];
@@ -60,14 +60,15 @@ class user_log
             $stmt->execute(
                 array( ":user_id"=>$last_id ));
 
-            $txt="http://localhost/BITM_PROJECT/views/finalproject/project/varify.php?token=$token";
-            echo $txt;
-            die();
+//            $txt="http://localhost/cvbank/views/finalproject/project/varify.php?token=$token";
+//            echo $txt;
+//            die();
+             $txt = "Click here for email verify.http://mamunbd.com/verify.php?token=$token";
             $subject="Email Varification..";
             mail($this->email,$subject,$txt);
             if($output){
-                $_SESSION['message']="Registration Successfully !";
-                header('location:index.php');
+                 $_SESSION['message'] = "<span style='color:green;font-size:20px;'>Data inserted successfully and you'r email verify!!</span>";
+                header("Location:registration.php");
 
             }
         }catch (PDOException $e){
@@ -115,18 +116,28 @@ class user_log
             $stmt=$this->pdo->prepare($query);
             $stmt->execute();
             $data=$stmt->fetch();
-               $_SESSION['user_info']=$data;
-               if(!empty($_SESSION['user_info'])){
-                   header('location:dashboard.php');
+             if ($data['is_active'] == '0') {
+                $_SESSION['failed'] = "You'r Email not verified yet!!";
+                header("Location:index.php");
+            } else {
+                $_SESSION['user_info'] = $data;
+                if (!empty($_SESSION['user_info'])) {
+                    header("Location:dashboard.php");
+                } else {
+                    $_SESSION['failed'] = "Username or Password not match";
+                    header("location:index.php");
+                }
+//               $_SESSION['user_info']=$data;
+//               if(!empty($_SESSION['user_info'])){
+//                   header('location:dashboard.php');
+//
+//               }else{
+//                   header('location:index.php');
+//                   $_SESSION['failed']="Opps ! Invalied UserName or Password  !!";
+//               }
 
-               }else{
-                   header('location:index.php');
-                   $_SESSION['failed']="Opps ! Invalied UserName or Password  !!";
-               }
 
-
-        }catch (PDOException $e){
+        }}catch (PDOException $e){
             echo "ERRRor:".$e->getMessage();
         }
-    }
-}
+    }}

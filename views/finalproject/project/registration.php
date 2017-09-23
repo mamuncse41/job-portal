@@ -7,7 +7,7 @@ session_start();
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Registration Page</title>
+	<title>Cvbank:-Registration Page</title>
 
 	<!-- Global stylesheets -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
@@ -36,7 +36,7 @@ session_start();
 	<!-- Main navbar -->
 	<div class="navbar navbar-inverse">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="index.php"><img src="assets/images/codebreaker.png" alt="Logo"></a>
+			<a class="navbar-brand" href="index.php">Cvbank</a>
 
 			<ul class="nav navbar-nav pull-right visible-xs-block">
 				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
@@ -62,12 +62,22 @@ session_start();
 					<form action="store.php" method="post">
 						<div class="panel panel-body login-form">
 							<div class="text-center">
-                                <h4 style="color: red">
-                                    <?php if(isset( $_SESSION['failed'])){
-                                        echo  $_SESSION['failed'];
-                                        unset($_SESSION['failed']);}
+                                  <?php
+                                    echo '<h3 style="color:green;" align="center">';
+                                    if(isset( $_SESSION['message'])){
+                                        echo  $_SESSION['message'];
+                                        unset( $_SESSION['message']);
+                                    }
+                                    echo'</h3>';
                                     ?>
-                                </h4>
+                                    <?php
+                                    echo '<h3 style="color:red;" align="center">';
+                                    if(isset( $_SESSION['failed'])){
+                                        echo  $_SESSION['failed'];
+                                        unset( $_SESSION['failed']);
+                                    }
+                                    echo'</h3>';
+                                    ?>
 								<h1 class="content-group">Create account <small class="display-block">All fields are required</small></h1>
 							</div>
 							<div class="content-divider text-muted form-group"><span>Your credentials</span></div>
@@ -102,13 +112,16 @@ session_start();
 								</div>
 							</div>
 							<button type="submit" class="btn bg-teal btn-block btn-lg">Register <i class="icon-circle-right2 position-right"></i></button>
+                                                        
+                                                        <a href="index.php" class="btn bg-blue btn-block">Login <i class="icon-circle-right2 position-right"></i></a>
+							
 						</div>
 					</form>
 					<!-- /advanced login -->
 
 					<!-- Footer -->
 					<div class="footer text-muted">
-						&copy; 2017. <a href="#">WEB APPS DEVELOPERS</a> by <a href="#" target="_blank">CODE BREAKERS</a>
+						&copy; 2017. <a href="#">WEB APPS DEVELOPERS</a> by <a href="#" target="_blank">Code of Ethics</a>
 					</div>
 					<!-- /footer -->
 

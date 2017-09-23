@@ -9,7 +9,7 @@ if(!empty($_SESSION['user_info'])){
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Dashboard</title>
+	<title>Cvbank:-Dashboard</title>
 
 	<!-- Global stylesheets -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
@@ -44,112 +44,113 @@ if(!empty($_SESSION['user_info'])){
 
 <body>
 
-	<!-- Main navbar -->
-	<div class="navbar navbar-inverse">
-        <div class="navbar navbar-inverse navbar-fixed-top ">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="dashboard.php"><img src="assets/images/codebreaker.png" alt=""></a>
+    <!-- Main navbar -->
+        <div class="navbar navbar-inverse">
+            <div class="navbar navbar-inverse navbar-fixed-top ">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="dashboard.php">Cvbank</a>
+                    <a class="navbar-brand" href="job_view.php">JOBS</a>
+                     <a class="navbar-brand" href="#">TRAINING</a>
+                    <ul class="nav navbar-nav visible-xs-block">
+                        <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+                        <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+                    </ul>
+                </div>
 
-			<ul class="nav navbar-nav visible-xs-block">
-				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
-				<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
-			</ul>
-		</div>
-
-		<div class="navbar-collapse collapse" id="navbar-mobile">
-			<ul class="nav navbar-nav">
-
-
-				<li class="dropdown">
-
-					<div class="dropdown-menu dropdown-content">
-						<div class="dropdown-content-heading">
-							<ul class="icons-list">
-								<li><a href="#"><i class="icon-sync"></i></a></li>
-							</ul>
-						</div>
-
-						<ul class="media-list dropdown-content-body width-350">
-							<li class="media">
-								<div class="media-left">
-									<a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
-								</div>
-							</li>
-
-							<li class="media">
-								<div class="media-left">
-									<a href="#" class="btn border-warning text-warning btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-commit"></i></a>
-								</div>
-								
-								<div class="media-body">
-									Add full font overrides for popovers and tooltips
-									<div class="media-annotation">36 minutes ago</div>
-								</div>
-							</li>
-
-							<li class="media">
-								<div class="media-left">
-									<a href="#" class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-branch"></i></a>
-								</div>
-								
-								<div class="media-body">
-									<a href="#">Chris Arney</a> created a new <span class="text-semibold">Design</span> branch
-									<div class="media-annotation">2 hours ago</div>
-								</div>
-							</li>
-
-							<li class="media">
-								<div class="media-left">
-									<a href="#" class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-merge"></i></a>
-								</div>
-								
-								<div class="media-body">
-									<a href="#">Eugene Kopyov</a> merged <span class="text-semibold">Master</span> and <span class="text-semibold">Dev</span> branches
-									<div class="media-annotation">Dec 18, 18:36</div>
-								</div>
-							</li>
-
-							<li class="media">
-								<div class="media-left">
-									<a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
-								</div>
-								
-								<div class="media-body">
-									Have Carousel ignore keyboard events
-									<div class="media-annotation">Dec 12, 05:46</div>
-								</div>
-							</li>
-						</ul>
-
-						<div class="dropdown-content-footer">
-							<a href="#" data-popup="tooltip" title="All activity"><i class="icon-menu display-block"></i></a>
-						</div>
-					</div>
-				</li>
-			</ul>
-
-			<ul class="nav navbar-nav navbar-right">
+                <div class="navbar-collapse collapse" id="navbar-mobile">
+                    <ul class="nav navbar-nav">
 
 
-				<li class="dropdown dropdown-user">
-					<a class="dropdown-toggle" data-toggle="dropdown">
-						<img src="<?php echo "settings/images/".$_SESSION['user_setting']['featured_img']?>" class="img-circle img-sm" alt="">
-						<span><?php echo  $_SESSION['user_info']['email'];?></span>
-						<i class="caret"></i>
-					</a>
+                        <li class="dropdown">
 
-					<ul class="dropdown-menu dropdown-menu-right">
-						<li><a href="dashboard.php"><i class="icon-user-plus"></i> My profile</a></li>
-						<li class="divider"></li>
-						<li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
-						<li><a href="logout.php"><i class="icon-switch2"></i> Logout</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	  </div>
-    </div>
-	<!-- /main navbar -->
+                            <div class="dropdown-menu dropdown-content">
+                                <div class="dropdown-content-heading">
+                                    <ul class="icons-list">
+                                        <li><a href="#"><i class="icon-sync"></i></a></li>
+                                    </ul>
+                                </div>
+
+                                <ul class="media-list dropdown-content-body width-350">
+                                    <li class="media">
+                                        <div class="media-left">
+                                            <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
+                                        </div>
+                                    </li>
+
+                                    <li class="media">
+                                        <div class="media-left">
+                                            <a href="#" class="btn border-warning text-warning btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-commit"></i></a>
+                                        </div>
+
+                                        <div class="media-body">
+                                            Add full font overrides for popovers and tooltips
+                                            <div class="media-annotation">36 minutes ago</div>
+                                        </div>
+                                    </li>
+
+                                    <li class="media">
+                                        <div class="media-left">
+                                            <a href="#" class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-branch"></i></a>
+                                        </div>
+
+                                        <div class="media-body">
+                                            <a href="#">Chris Arney</a> created a new <span class="text-semibold">Design</span> branch
+                                            <div class="media-annotation">2 hours ago</div>
+                                        </div>
+                                    </li>
+
+                                    <li class="media">
+                                        <div class="media-left">
+                                            <a href="#" class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-merge"></i></a>
+                                        </div>
+
+                                        <div class="media-body">
+                                            <a href="#">Eugene Kopyov</a> merged <span class="text-semibold">Master</span> and <span class="text-semibold">Dev</span> branches
+                                            <div class="media-annotation">Dec 18, 18:36</div>
+                                        </div>
+                                    </li>
+
+                                    <li class="media">
+                                        <div class="media-left">
+                                            <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
+                                        </div>
+
+                                        <div class="media-body">
+                                            Have Carousel ignore keyboard events
+                                            <div class="media-annotation">Dec 12, 05:46</div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="dropdown-content-footer">
+                                    <a href="#" data-popup="tooltip" title="All activity"><i class="icon-menu display-block"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+
+
+                        <li class="dropdown dropdown-user">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="<?php echo "settings/images/" . $_SESSION['user_setting']['featured_img'] ?>" class="img-circle img-sm" alt="">
+                                <span><?php echo $_SESSION['user_info']['username']; ?></span>
+                                <i class="caret"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="dashboard.php"><i class="icon-user-plus"></i> My profile</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
+                                <li><a href="logout.php"><i class="icon-switch2"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /main navbar -->
 
 
 	<!-- Page container -->
@@ -943,12 +944,7 @@ if(!empty($_SESSION['user_info'])){
                                             </td>
                                         </tr>
 
-                                        <tr class="active border-double">
-                                            <td colspan="3">Resolved tickets</td>
-                                            <td class="text-right">
-                                                <span class="badge bg-success">42</span>
-                                            </td>
-                                        </tr>
+                                 
 
                                         <tr>
                                             <td class="text-center">
@@ -1149,112 +1145,7 @@ if(!empty($_SESSION['user_info'])){
                             <!-- /support tickets -->
 
 
-                            <!-- Latest posts -->
-                            <div class="panel panel-flat">
-                                <div class="panel-heading">
-                                    <h6 class="panel-title">Latest posts</h6>
-                                    <div class="heading-elements">
-                                        <ul class="icons-list">
-                                            <li><a data-action="collapse"></a></li>
-                                            <li><a data-action="reload"></a></li>
-                                            <li><a data-action="close"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <ul class="media-list content-group">
-                                                <li class="media stack-media-on-mobile">
-                                                    <div class="media-left">
-                                                        <div class="thumb">
-                                                            <a href="#">
-                                                                <img src="assets/images/placeholder.jpg" class="img-responsive img-rounded media-preview" alt="">
-                                                                <span class="zoom-image"><i class="icon-play3"></i></span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="media-body">
-                                                        <h6 class="media-heading"><a href="#">Up unpacked friendly</a></h6>
-                                                        <ul class="list-inline list-inline-separate text-muted mb-5">
-                                                            <li><i class="icon-book-play position-left"></i> Video tutorials</li>
-                                                            <li>14 minutes ago</li>
-                                                        </ul>
-                                                        The him father parish looked has sooner. Attachment frequently gay terminated son...
-                                                    </div>
-                                                </li>
-
-                                                <li class="media stack-media-on-mobile">
-                                                    <div class="media-left">
-                                                        <div class="thumb">
-                                                            <a href="#">
-                                                                <img src="assets/images/placeholder.jpg" class="img-responsive img-rounded media-preview" alt="">
-                                                                <span class="zoom-image"><i class="icon-play3"></i></span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="media-body">
-                                                        <h6 class="media-heading"><a href="#">It allowance prevailed</a></h6>
-                                                        <ul class="list-inline list-inline-separate text-muted mb-5">
-                                                            <li><i class="icon-book-play position-left"></i> Video tutorials</li>
-                                                            <li>12 days ago</li>
-                                                        </ul>
-                                                        Alteration literature to or an sympathize mr imprudence. Of is ferrars subject as enjoyed...
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <ul class="media-list content-group">
-                                                <li class="media stack-media-on-mobile">
-                                                    <div class="media-left">
-                                                        <div class="thumb">
-                                                            <a href="#">
-                                                                <img src="assets/images/placeholder.jpg" class="img-responsive img-rounded media-preview" alt="">
-                                                                <span class="zoom-image"><i class="icon-play3"></i></span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="media-body">
-                                                        <h6 class="media-heading"><a href="#">Case read they must</a></h6>
-                                                        <ul class="list-inline list-inline-separate text-muted mb-5">
-                                                            <li><i class="icon-book-play position-left"></i> Video tutorials</li>
-                                                            <li>20 hours ago</li>
-                                                        </ul>
-                                                        On it differed repeated wandered required in. Then girl neat why yet knew rose spot...
-                                                    </div>
-                                                </li>
-
-                                                <li class="media stack-media-on-mobile">
-                                                    <div class="media-left">
-                                                        <div class="thumb">
-                                                            <a href="#">
-                                                                <img src="assets/images/placeholder.jpg" class="img-responsive img-rounded media-preview" alt="">
-                                                                <span class="zoom-image"><i class="icon-play3"></i></span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="media-body">
-                                                        <h6 class="media-heading"><a href="#">Too carriage attended</a></h6>
-                                                        <ul class="list-inline list-inline-separate text-muted mb-5">
-                                                            <li><i class="icon-book-play position-left"></i> FAQ section</li>
-                                                            <li>2 days ago</li>
-                                                        </ul>
-                                                        Marianne or husbands if at stronger ye. Considered is as middletons uncommonly...
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /latest posts -->
+                       
 
                         </div>
 
@@ -1806,132 +1697,13 @@ if(!empty($_SESSION['user_info'])){
                             <!-- /my messages -->
 
 
-                            <!-- Daily financials -->
-                            <div class="panel panel-flat">
-                                <div class="panel-heading">
-                                    <h6 class="panel-title">Daily financials</h6>
-                                    <div class="heading-elements">
-                                        <form class="heading-form" action="#">
-                                            <div class="form-group">
-                                                <label class="checkbox checkbox-inline checkbox-switchery checkbox-right switchery-xs">
-                                                    <input type="checkbox" class="switcher" id="realtime" checked="checked">
-                                                    Realtime
-                                                </label>
-                                            </div>
-                                        </form>
-                                        <span class="badge bg-danger-400 heading-text">+86</span>
-                                    </div>
-                                </div>
-
-                                <div class="panel-body">
-                                    <div class="content-group-xs" id="bullets"></div>
-
-                                    <ul class="media-list">
-                                        <li class="media">
-                                            <div class="media-left">
-                                                <a href="#" class="btn border-pink text-pink btn-flat btn-rounded btn-icon btn-xs"><i class="icon-statistics"></i></a>
-                                            </div>
-
-                                            <div class="media-body">
-                                                Stats for July, 6: 1938 orders, $4220 revenue
-                                                <div class="media-annotation">2 hours ago</div>
-                                            </div>
-
-                                            <div class="media-right media-middle">
-                                                <ul class="icons-list">
-                                                    <li>
-                                                        <a href="#"><i class="icon-arrow-right13"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                        <li class="media">
-                                            <div class="media-left">
-                                                <a href="#" class="btn border-success text-success btn-flat btn-rounded btn-icon btn-xs"><i class="icon-checkmark3"></i></a>
-                                            </div>
-
-                                            <div class="media-body">
-                                                Invoices <a href="#">#4732</a> and <a href="#">#4734</a> have been paid
-                                                <div class="media-annotation">Dec 18, 18:36</div>
-                                            </div>
-
-                                            <div class="media-right media-middle">
-                                                <ul class="icons-list">
-                                                    <li>
-                                                        <a href="#"><i class="icon-arrow-right13"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                        <li class="media">
-                                            <div class="media-left">
-                                                <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-xs"><i class="icon-alignment-unalign"></i></a>
-                                            </div>
-
-                                            <div class="media-body">
-                                                Affiliate commission for June has been paid
-                                                <div class="media-annotation">36 minutes ago</div>
-                                            </div>
-
-                                            <div class="media-right media-middle">
-                                                <ul class="icons-list">
-                                                    <li>
-                                                        <a href="#"><i class="icon-arrow-right13"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                        <li class="media">
-                                            <div class="media-left">
-                                                <a href="#" class="btn border-warning-400 text-warning-400 btn-flat btn-rounded btn-icon btn-xs"><i class="icon-spinner11"></i></a>
-                                            </div>
-
-                                            <div class="media-body">
-                                                Order <a href="#">#37745</a> from July, 1st has been refunded
-                                                <div class="media-annotation">4 minutes ago</div>
-                                            </div>
-
-                                            <div class="media-right media-middle">
-                                                <ul class="icons-list">
-                                                    <li>
-                                                        <a href="#"><i class="icon-arrow-right13"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                        <li class="media">
-                                            <div class="media-left">
-                                                <a href="#" class="btn border-teal-400 text-teal btn-flat btn-rounded btn-icon btn-xs"><i class="icon-redo2"></i></a>
-                                            </div>
-
-                                            <div class="media-body">
-                                                Invoice <a href="#">#4769</a> has been sent to <a href="#">Robert Smith</a>
-                                                <div class="media-annotation">Dec 12, 05:46</div>
-                                            </div>
-
-                                            <div class="media-right media-middle">
-                                                <ul class="icons-list">
-                                                    <li>
-                                                        <a href="#"><i class="icon-arrow-right13"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- /daily financials -->
 
                         </div>
                     </div>
 
 					<!-- Footer -->
 					<div class="footer text-muted">
-						&copy; 2015. <a href="#">Web App devloper</a> by <a href="" target="_blank">Code Breakers</a>
+						&copy; 2017 <a href="#">Web App devloper</a> by <a href="" target="_blank">Code of Ethics</a>
 					</div>
 					<!-- /footer -->
 

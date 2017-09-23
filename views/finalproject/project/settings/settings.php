@@ -4,6 +4,7 @@ use App\finalproject\settings\settings;
 $setting_obj=new settings();
 $setting_obj->setSetting($_GET);
 $data=$setting_obj->setting();
+if(!empty($_SESSION['user_info'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,12 +16,9 @@ $data=$setting_obj->setting();
     <!--    <div class="navbar navbar-inverse navbar-fixed-top ">-->
 
     <div class="navbar-header ">
-        <a class="navbar-brand" href="../dashboard.php"><img src="../assets/images/codebreaker.png" alt=""></a>
-
-        <ul class="nav navbar-nav visible-xs-block">
-            <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
-            <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
-        </ul>
+       <a class="navbar-brand" href="../dashboard.php">Cvbank</a>
+            <a class="navbar-brand" href="#">JOBS</a>
+            <a class="navbar-brand" href="#">TRAINING</a>
     </div>
 
     <div class="navbar-collapse collapse" id="navbar-mobile">
@@ -116,7 +114,7 @@ $data=$setting_obj->setting();
             <li class="dropdown dropdown-user">
                 <a class="dropdown-toggle" data-toggle="dropdown">
                     <img src="<?php echo "images/".$_SESSION['user_setting']['featured_img']?>" class="img-circle img-sm" alt="">
-                    <span><?php echo  $_SESSION['user_info']['email'];?></span>
+                    <span><?php echo  $_SESSION['user_info']['username'];?></span>
                     <i class="caret"></i>
                 </a>
 
@@ -354,3 +352,8 @@ $data=$setting_obj->setting();
 
 </body>
 </html>
+    <?php
+}else{
+    header('location:../index.php');
+}
+
