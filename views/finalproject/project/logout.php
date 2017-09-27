@@ -2,6 +2,6 @@
 session_start();
 if(!empty( $_SESSION['user_info'])){
     unset( $_SESSION['user_info']);
-    $_SESSION['message']="Thanks !";
+    $_SESSION['message']="Logout successfully!!";
     header('location:index.php');
 }

@@ -39,6 +39,7 @@ array_pop($data_at);
     <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
     <link href="assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
+   
     <link href="assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
@@ -64,18 +65,13 @@ array_pop($data_at);
         <div class="content-wrapper">
             <!-- Content area -->
             <div class="content">
-                <div class="top-menu">
-
-                    <ul >
-
-                        
-                        <li class="upper-links"><a class="links" href="http://localhost/cvbank/views/Provider/Users/login.php">Job Provider</a></li>
-                        <li class="upper-links"><a class="links" href="http://localhost/cvbank/views/finalproject/project/login.php">Job Seeker</a></li>
-                        <li class="upper-links"><a class="links" href="http://localhost/cvbank/views/finalproject/project/about_us.php">About Us</a></li>
-                        <li class="upper-links"><a class="links" href="http://localhost/cvbank/views/finalproject/project/contact.php">Contact</a></li>
-                        <li class="upper-links"><a class="links" href="http://localhost/cvbank/views/finalproject/project/help.php">Help</a></li>
-
-                    </ul>
+                <div class="icon-bar">
+                    <a class="active" href="http://localhost/cvbank/index.php"><i class="fa fa-home">Cvbank</i></a> 
+                    <a href="http://localhost/cvbank/index.php"><i class="fa fa-search">Home</i></a> 
+                    <a href="http://localhost/cvbank/views/Provider/Users/login.php"><i class="fa fa-envelope">Job Provider</i></a> 
+                    <a href="http://localhost/cvbank/views/finalproject/project/login.php"><i class="fa fa-globe">Job Seeker</i></a>
+                    <a href="http://localhost/cvbank/views/finalproject/project/about_us.php"><i class="fa fa-trash">About Us</i></a> 
+                    <a href="http://localhost/cvbank/views/finalproject/project/contact.php"><i class="fa fa-trash">Contact</i></a> 
                 </div>
                 <div class="panel panel-flat">
                     <div class="panel-heading">

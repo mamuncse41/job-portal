@@ -21,10 +21,12 @@ class jobs
     {
         try
         {
-            $query="SELECT * FROM `clients_post` WHERE user_id = "."'".$_SESSION['user_info']['unique_id']."'";
+            // WHERE user_id = "."'".$_SESSION['user_info']['unique_id']."'"
+             $query="SELECT * FROM `clients_post` WHERE user_id = "."'".$_SESSION['user_info']['unique_id']."'";
             $stmt=$this->pdo->prepare($query);
             $stmt->execute();
             $data= $stmt->fetchAll();
+          
             return $data;
         }
         catch (PDOException $e)

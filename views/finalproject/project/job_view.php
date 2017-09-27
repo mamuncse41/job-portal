@@ -4,16 +4,19 @@ include_once ("../../../vendor/autoload.php");
 use App\finalproject\jobs\jobs;
 $job_views=new jobs();
 $job_views->setData($_GET);
-$data=$job_views->job_view();
+$values=$job_views->job_view();
+
 if(!empty($_SESSION['user_info'])){
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Cvbank:-Dashboard</title>
+	<title>Cvbank:-jobs</title>
 
 	<!-- Global stylesheets -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
@@ -53,7 +56,7 @@ if(!empty($_SESSION['user_info'])){
             <div class="navbar navbar-inverse navbar-fixed-top ">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="dashboard.php">Cvbank</a>
-                     <a class="navbar-brand" href="#">JOBS</a>
+                    <a class="navbar-brand" href="job_view.php">JOBS</a>
                      <a class="navbar-brand" href="#">TRAINING</a>
                     <ul class="nav navbar-nav visible-xs-block">
                         <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
@@ -725,7 +728,7 @@ if(!empty($_SESSION['user_info'])){
                             <!-- Support tickets -->
                             <div class="panel panel-flat">
                                 <div class="panel-heading">
-                                    <h6 class="panel-title">Support tickets</h6>
+                                    <h6 class="panel-title">
                                     <div class="heading-elements">
                                         <button type="button" class="btn btn-link daterange-ranges heading-btn text-semibold">
                                             <i class="icon-calendar3 position-left"></i> <span></span> <b class="caret"></b>
@@ -808,11 +811,18 @@ if(!empty($_SESSION['user_info'])){
                                                         <span class="letter-icon"></span>
                                                     </a>
                                                 </div>
-
+                                                <?php  foreach ($values as $value ){?>
                                                 <div class="media-body">
-                                                    <a href="#" class="display-inline-block text-default text-semibold letter-icon-title">Annabelle Doney</a>
-                                                    <div class="text-muted text-size-small"><span class="status-mark border-blue position-left"></span> Active</div>
+                                                    <table>
+                                                    <tr>
+                                                        <td><?php echo $value['edu_qulification'];?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><?php echo $value['job_title'];?></td>
+                                                    </tr>
+                                                    </table>
                                                 </div>
+                                                <?php } ?>
                                             </td>
                                             <td>
                                                 <a href="#" class="text-default display-inline-block">
