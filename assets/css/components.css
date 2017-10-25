@@ -870,6 +870,7 @@
 * ---------------------------------------------------------------------------- */
 .page-container {
   position: relative;
+  
 }
 @media (min-width: 769px) {
   .page-container {
@@ -891,6 +892,7 @@
 .content-wrapper {
   padding-bottom: 20px;
   width: 100%;
+  
 }
 @media (min-width: 769px) {
   .content-wrapper {

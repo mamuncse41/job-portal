@@ -49,7 +49,7 @@ if(!empty($_SESSION['user_info'])){
             <div class="navbar navbar-inverse navbar-fixed-top ">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="dashboard.php"><img src="../../../assets/images/cvbank.png"></a>
-                    <a class="navbar-brand" href="job_view.php">JOBS</a>
+                    <a class="navbar-brand" href="jobs/job_view.php">JOBS</a>
                      <a class="navbar-brand" href="#">TRAINING</a>
                     <ul class="nav navbar-nav visible-xs-block">
                         <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>

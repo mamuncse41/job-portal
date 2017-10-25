@@ -43,8 +43,8 @@
                                         <li>
                                             <a href="#"><i class="icon-insert-template"></i> <span>Job Post</span></a>
                                           <ul>
-                                              <li><a href="../jobPost/addPost.php">New Job</a></li>
-                                              <li><a href="../jobPost/managePost.php">Manage Job</a></li>
+                                              <li><a href="../jobPost/addPost.php?id=<?php echo $_SESSION['user_info']['unique_id'];?>">New Job</a></li>
+                                              <li><a href="../jobPost/managePost.php?id=<?php echo $_SESSION['user_info']['unique_id'];?>">Manage Job</a></li>
                                             </ul>
                                         </li>
 

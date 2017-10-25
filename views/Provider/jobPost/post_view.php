@@ -105,6 +105,10 @@ if(!empty($_SESSION['user_info'])){
                     </tr>
                      <tr>
                         <th>Gender</th>
+                        <th>Gender: <?php echo $value['gender'];?></th>
+                    </tr>
+                     <tr>
+                        <th>Age</th>
                         <th>Minimum Age: <?php echo $value['mini_age'];?> Maximum Age: <?php echo $value['max_age'];?></th>
                     </tr>
                      <tr>

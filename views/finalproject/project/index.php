@@ -39,7 +39,7 @@ session_start();
                 <div class="content-wrapper">
                     <!-- Content area -->
                     <div class="content">
-                      <div class="icon-bar">
+                    <div class="icon-bar">
                     <a class="active" href="http://localhost/cvbank/index.php"><i class="fa fa-home">Cvbank</i></a> 
                     <a href="http://localhost/cvbank/index.php"><i class="fa fa-search">Home</i></a> 
                     <a href="http://localhost/cvbank/views/Provider/Users/login.php"><i class="fa fa-envelope">Job Provider</i></a> 
