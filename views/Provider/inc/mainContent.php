@@ -8,7 +8,7 @@
                                 <ul class="breadcrumb">
                                     <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>
 
-                                    <li><a href="clientsDashboard.php"><i class="icon-home2 position-left"></i> Home</a></li>
+                                    <li><a href="../Users/clientsDashboard.php"><i class="icon-home2 position-left"></i> Home</a></li>
                                  							
                                 </ul>
 

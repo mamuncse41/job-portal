@@ -15,7 +15,7 @@ if (!empty($_SESSION['user_info'])) {
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>Cvbank:-jobs</title>
+            <title>Cvbank:-Job View</title>
 
             <!-- Global stylesheets -->
             <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
@@ -55,7 +55,7 @@ if (!empty($_SESSION['user_info'])) {
                 <div class="navbar navbar-inverse navbar-fixed-top ">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="../dashboard.php">Cvbank</a>
-                        <a class="navbar-brand" href="jobs/job_view.php">JOBS</a>
+                        <a class="navbar-brand" href="job_view.php">JOBS</a>
                         <a class="navbar-brand" href="#">TRAINING</a>
                         <ul class="nav navbar-nav visible-xs-block">
                             <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
@@ -199,52 +199,8 @@ if (!empty($_SESSION['user_info'])) {
                                     <ul class="navigation navigation-main navigation-accordion">
 
                                         <!-- Main -->
-                                        <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
-                                        <li>
-                                            <a href="#"><i class="icon-home4"></i> <span>ABOUT</span></a>
-                                            <ul>
-                                                <li><a href="about/about.php?id=<?php echo $_SESSION['user_info']['unique_id']; ?>">About</a></li>
-                                                <li><a href="about/hobbies.php?id=<?php echo $_SESSION['user_info']['unique_id']; ?>">Hobbies</a></li>
-                                                <li><a href="about/facts.php?id=<?php echo $_SESSION['user_info']['unique_id']; ?>">Facts</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="icon-magazine"></i> <span>RESUME</span></a>
-                                            <ul>
-                                                <li><a href="resume/education.php" id="layout1">Add Education</a></li>
-                                                <li><a href="resume/exprience.php" id="layout2">Add Exprience</a></li>
-                                                <li><a href="resume/award.php" id="layout3">Add Award</a></li>
-
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="icon-insert-template"></i> <span>SERVICES</span></a>
-                                            <ul>
-                                                <li><a href="service/service.php">My Services</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li>
-                                            <a href="#"><i class="icon-cash3"></i> <span>TEACHING</span></a>
-                                            <ul>
-                                                <li><a href="teaching/teaching.php">Add Teaching</a></li>
-
-
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="icon-spinner11 spinner"></i> <span> SKILLS</span></a>
-                                            <ul>
-                                                <li><a href="skill/skill.php">Add Skill</a></li>
-
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="icon-task"></i> <span>PUBLICATION</span></a>
-                                            <ul>
-                                                <li><a href="publication/blog.php">My Blog</a></li>
-                                            </ul>
-                                        </li>
+                                        <li class="navigation-header"><span>Job View</span> <i class="icon-menu" title="Job View"></i></li>
+        
                                         <li>
                                             <a href="#"><i class="icon-comments"></i> <span>CONTACT</span></a>
                                             <ul>
@@ -698,6 +654,13 @@ if (!empty($_SESSION['user_info'])) {
 
                                             <!-- /description lists -->
                                         </div>
+                                        <span style="margin-left:400px;">
+                                        
+                                            <a href="jobApply.php" class="btn bg-indigo-700" style="width:150px;font-size:16px">
+                                                  
+                                                    Apply Job
+                                                </a>
+                                        </span>
 
 
                                     </div>
@@ -711,102 +674,13 @@ if (!empty($_SESSION['user_info'])) {
                                 <div class="col-lg-4">
 
                                     <!-- Progress counters -->
-                                    <div class="row">
-                                        <div class="col-md-6">
-
-                                            <!-- Available hours -->
-                                            <div class="panel text-center">
-                                                <div class="panel-body">
-                                                    <div class="heading-elements">
-                                                        <ul class="icons-list">
-                                                            <li class="dropdown text-muted">
-                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog3"></i> <span class="caret"></span></a>
-                                                                <ul class="dropdown-menu dropdown-menu-right">
-                                                                    <li><a href="#"><i class="icon-sync"></i> Update data</a></li>
-                                                                    <li><a href="#"><i class="icon-list-unordered"></i> Detailed log</a></li>
-                                                                    <li><a href="#"><i class="icon-pie5"></i> Statistics</a></li>
-                                                                    <li><a href="#"><i class="icon-cross3"></i> Clear list</a></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <!-- Progress counter -->
-                                                    <div class="content-group-sm svg-center position-relative" id="hours-available-progress"></div>
-                                                    <!-- /progress counter -->
-
-
-                                                    <!-- Bars -->
-                                                    <div id="hours-available-bars"></div>
-                                                    <!-- /bars -->
-
-                                                </div>
-                                            </div>
-                                            <!-- /available hours -->
-
-                                        </div>
-
-                                        <div class="col-md-6">
-
-                                            <!-- Productivity goal -->
-                                            <div class="panel text-center">
-                                                <div class="panel-body">
-                                                    <div class="heading-elements">
-                                                        <ul class="icons-list">
-                                                            <li class="dropdown text-muted">
-                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog3"></i> <span class="caret"></span></a>
-                                                                <ul class="dropdown-menu dropdown-menu-right">
-                                                                    <li><a href="#"><i class="icon-sync"></i> Update data</a></li>
-                                                                    <li><a href="#"><i class="icon-list-unordered"></i> Detailed log</a></li>
-                                                                    <li><a href="#"><i class="icon-pie5"></i> Statistics</a></li>
-                                                                    <li><a href="#"><i class="icon-cross3"></i> Clear list</a></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <!-- Progress counter -->
-                                                    <div class="content-group-sm svg-center position-relative" id="goal-progress"></div>
-                                                    <!-- /progress counter -->
-
-                                                    <!-- Bars -->
-                                                    <div id="goal-bars"></div>
-                                                    <!-- /bars -->
-
-                                                </div>
-                                            </div>
-                                            <!-- /productivity goal -->
-
-                                        </div>
-                                    </div>
+                                  
                                     <!-- /progress counters -->
 
 
                                     <!-- Daily sales -->
                                     <div class="panel panel-flat">
-                                        <div class="panel-heading">
-                                            <h6 class="panel-title">Daily sales stats</h6>
-                                            <div class="heading-elements">
-                                                <span class="heading-text">Balance: <span class="text-bold text-danger-600 position-right">$4,378</span></span>
-                                                <ul class="icons-list">
-                                                    <li class="dropdown text-muted">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog3"></i> <span class="caret"></span></a>
-                                                        <ul class="dropdown-menu dropdown-menu-right">
-                                                            <li><a href="#"><i class="icon-sync"></i> Update data</a></li>
-                                                            <li><a href="#"><i class="icon-list-unordered"></i> Detailed log</a></li>
-                                                            <li><a href="#"><i class="icon-pie5"></i> Statistics</a></li>
-                                                            <li class="divider"></li>
-                                                            <li><a href="#"><i class="icon-cross3"></i> Clear list</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="panel-body">
-                                            <div id="sales-heatmap"></div>
-                                        </div>
-
+                                        
                                         <div class="table-responsive">
                                             <table class="table text-nowrap">
                                                 <thead>
@@ -949,7 +823,7 @@ if (!empty($_SESSION['user_info'])) {
                                                             <td>
                                                                 <div class="media-left media-middle">
                                                                     <a href="#" class="btn bg-teal-700" style="width:100px">
-                                                                        <span class="letter-icon">Application Deadline
+                                                                        <span class="letter-icon">Deadline
                                                                         </span>
                                                                     </a>
                                                                 </div>
@@ -968,6 +842,7 @@ if (!empty($_SESSION['user_info'])) {
                                                 </tbody>
                                             </table>
                                         </div>
+                                      
                                     </div>
                                     <!-- /daily sales -->
 

@@ -1,11 +1,9 @@
 <?php
 include_once ("../../../../vendor/autoload.php");
-
 use App\finalproject\jobs\jobs;
-
 $job_views = new jobs();
 $job_views->setData($_GET);
-$values = $job_views->job_view();
+$data = $job_views->show_job();
 //print_r($values);
 //die();
 if (!empty($_SESSION['user_info'])) {
@@ -17,7 +15,7 @@ if (!empty($_SESSION['user_info'])) {
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>Cvbank:-Job List</title>
+            <title>Cvbank:-job Online Apply</title>
 
             <!-- Global stylesheets -->
             <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
@@ -26,6 +24,7 @@ if (!empty($_SESSION['user_info'])) {
             <link href="../assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
             <link href="../assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
             <link href="../assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+            <link rel="stylesheet" href="../../../Provider/style.css" type="text/css">
             <!-- /global stylesheets -->
 
             <!-- Core JS files -->
@@ -168,66 +167,7 @@ if (!empty($_SESSION['user_info'])) {
                 <div class="page-content">
 
                     <!-- Main sidebar -->
-                    <div class="sidebar sidebar-main">
-                        <div class="sidebar-content">
-
-                            <!-- User menu -->
-                            <div class="sidebar-user">
-                                <div class="category-content">
-                                    <div class="media">
-                                        <a href="#" class="media-left"><img src="<?php echo "settings/images/" . $_SESSION['user_setting']['featured_img'] ?>" class="img-circle img-sm" alt=""></a>
-                                        <div class="media-body">
-                                            <span class="media-heading text-semibold"><?php echo $_SESSION['user_info']['username']; ?></span>
-
-                                        </div>
-
-                                        <div class="media-right media-middle">
-                                            <ul class="icons-list">
-                                                <li>
-                                                    <a href="settings/settings.php?id=<?php echo $_SESSION['user_info']['unique_id']; ?> "><i class="icon-cog3  spinner"></i></a>
-
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /user menu -->
-
-
-                            <!-- Main navigation -->
-                            <div class="sidebar-category sidebar-category-visible">
-                                <div class="category-content no-padding">
-                                    <ul class="navigation navigation-main navigation-accordion">
-
-                                        <!-- Main -->
-                                        <li class="navigation-header"><span>Job Search</span> <i class="icon-menu" title="Job Search"></i></li>
-                      
-                                        <li>
-                                            <a href="#"><i class="icon-comments"></i> <span>CONTACT</span></a>
-                                            <ul>
-                                                <li><a href="colors_primary.html">Primary palette</a></li>
-                                                <li><a href="colors_danger.html">Danger palette</a></li>
-                                                <li><a href="colors_success.html">Success palette</a></li>
-                                                <li><a href="colors_warning.html">Warning palette</a></li>
-                                                <li><a href="colors_info.html">Info palette</a></li>
-
-                                            </ul>
-                                        </li>
-
-                                        <!-- Data visualization -->
-
-
-                                     
-                                        <!-- /page kits -->
-
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- /main navigation -->
-
-                        </div>
-                    </div>
+                 
                     <!-- /main sidebar -->
 
 
@@ -595,44 +535,51 @@ if (!empty($_SESSION['user_info'])) {
 
 
                                     <!-- Support tickets -->
-                                    <div class="panel panel-flat">
+                                    <div class="panel panel-flat" style="margin-left:10%;padding-left:10px">
 
 
 
                                         <!-- Description lists -->
-                                        <h6 class="content-group text-semibold">
-                                            Click at the job title to view details
-                                            <small class="display-block">Seeking Your Jobs</small>
-                                        </h6>
+                                        <h2 class="content-group text-info">
+                                          Cvbank.COM ONLINE APPLICATION FORM
+                                            
+                                        </h2>
 
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <div class="panel panel-body border-top-info">
-                                                    <h6 class="no-margin text-semibold">Jobs List</h6>
+                                                
+                                                    <h6 class="no-margin text-semibold" style="color:brown; font-size:20px; background:gray;text-align: center">Online Application</h6>
                                                   
-                                                            <?php foreach ($values as $value) { ?>
-                                                        <div class="well">
-
-                                                            <dl> 
-                                                                <dt>Company Name:</dt>
-                                                                <dd><?php echo $value['company_name']; ?></dd>
-                                                               <dt>Job Title:</dt>
-                                                               <dd><a href="show_job.php?id=<?php echo $value['id'];?>"><?php echo $value['job_title']; ?></a></dd>
-                                                                <dt>Education:</dt>
-                                                                <dd><?php echo $value['edu_qulification']; ?></dd>
-                                                                <dt>Experience:</dt>
-                                                                <dd> At least <?php echo $value['mini_experience']; ?>-<?php echo $value['max_experience']; ?> year(s)</dd> 
-                                                                 <dd>Application Deadline: <?php echo $value['application_day'];?>/<?php echo $value['application_month'];?>/<?php echo $value['application_year'];?></dd>
-
-                                                            </dl> 
-                                                        </div><?php } ?>
-                                                </div>
+                                                        <div class="#">
+                                                            <form>
+                                                                <table style="color:green; font-size:20px;">
+                                                                <tr>
+                                                                    <td style="padding-left:20px">Account Name:</td><td><span style="color:blue;font-size:16px"><?php echo $_SESSION['user_info']['username']; ?></span></td>
+                                                                </tr>
+                                                                   <tr>
+                                                                       <td style="padding-left:20px">Company Name:</td><td><span style="color:blue;font-size:16px"><?php echo $data['company_name']; ?></span></td>
+                                                                </tr>
+                                                                  <tr>
+                                                                      <td style="padding-left:20px">Position Applied: </td><td><span style="color:blue;font-size:16px"><?php echo $data['job_title']; ?></span></td>
+                                                                </tr>
+                                                                  <tr>
+                                                                      <td style="padding-left:20px">Your Expected Salary:</td><td><input type="number" name="#" id="input"/></td>
+                                                                </tr>
+                                                                   <tr >
+                                                                       <td style="padding-left:200px;padding-top:7px;"><input type="submit" name="#" value="Apply" class="btn bg-indigo-700" ></td>
+                                                                </tr>
+                                                                 
+                                                            </table> 
+                                                            </form>
+                                                        </div>
+                                              
                                             </div>
 
 
 
                                             <!-- /description lists -->
                                         </div>
+                                      
 
 
                                     </div>
@@ -643,164 +590,7 @@ if (!empty($_SESSION['user_info'])) {
 
                                 </div>
 
-                                <div class="col-lg-4">
-
-                                    <!-- Progress counters -->
-                                  
-                                    <!-- /progress counters -->
-
-
-                                    <!-- Daily sales -->
-                                    <div class="panel panel-flat">
-                                        
-
-                                        <div class="panel-body">
-                                            <div id="sales-heatmap"></div>
-                                        </div>
-
-                                        <div class="table-responsive">
-                                            <table class="table text-nowrap">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Application</th>
-                                                        <th>Time</th>
-                                                        <th>Price</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="media-left media-middle">
-                                                                <a href="#" class="btn bg-primary-400 btn-rounded btn-icon btn-xs">
-                                                                    <span class="letter-icon"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="media-body">
-                                                                <div class="media-heading">
-                                                                    <a href="#" class="letter-icon-title">Sigma application</a>
-                                                                </div>
-
-                                                                <div class="text-muted text-size-small"><i class="icon-checkmark3 text-size-mini position-left"></i> New order</div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="text-muted text-size-small">06:28 pm</span>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="text-semibold no-margin">$49.90</h6>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>
-                                                            <div class="media-left media-middle">
-                                                                <a href="#" class="btn bg-danger-400 btn-rounded btn-icon btn-xs">
-                                                                    <span class="letter-icon"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="media-body">
-                                                                <div class="media-heading">
-                                                                    <a href="#" class="letter-icon-title">Alpha application</a>
-                                                                </div>
-
-                                                                <div class="text-muted text-size-small"><i class="icon-spinner11 text-size-mini position-left"></i> Renewal</div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="text-muted text-size-small">04:52 pm</span>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="text-semibold no-margin">$90.50</h6>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>
-                                                            <div class="media-left media-middle">
-                                                                <a href="#" class="btn bg-indigo-400 btn-rounded btn-icon btn-xs">
-                                                                    <span class="letter-icon"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="media-body">
-                                                                <div class="media-heading">
-                                                                    <a href="#" class="letter-icon-title">Delta application</a>
-                                                                </div>
-
-                                                                <div class="text-muted text-size-small"><i class="icon-lifebuoy text-size-mini position-left"></i> Support</div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="text-muted text-size-small">01:26 pm</span>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="text-semibold no-margin">$60.00</h6>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>
-                                                            <div class="media-left media-middle">
-                                                                <a href="#" class="btn bg-success-400 btn-rounded btn-icon btn-xs">
-                                                                    <span class="letter-icon"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="media-body">
-                                                                <div class="media-heading">
-                                                                    <a href="#" class="letter-icon-title">Omega application</a>
-                                                                </div>
-
-                                                                <div class="text-muted text-size-small"><i class="icon-lifebuoy text-size-mini position-left"></i> Support</div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="text-muted text-size-small">11:46 am</span>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="text-semibold no-margin">$55.00</h6>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>
-                                                            <div class="media-left media-middle">
-                                                                <a href="#" class="btn bg-danger-400 btn-rounded btn-icon btn-xs">
-                                                                    <span class="letter-icon"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="media-body">
-                                                                <div class="media-heading">
-                                                                    <a href="#" class="letter-icon-title">Alpha application</a>
-                                                                </div>
-
-                                                                <div class="text-muted text-size-small"><i class="icon-spinner11 text-size-mini position-left"></i> Renewal</div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="text-muted text-size-small">10:29 am</span>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="text-semibold no-margin">$90.50</h6>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!-- /daily sales -->
-
-
-                                    <!-- My messages -->
-
-                                    <!-- /my messages -->
-
-
-
-                                </div>
+                               
                             </div>
 
                             <!-- Footer -->
@@ -824,7 +614,11 @@ if (!empty($_SESSION['user_info'])) {
         </body>
     </html>
     <?php
-} else {
+}else{
     header('location:index.php');
 }
+
+
+
+
 
